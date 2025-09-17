@@ -10,6 +10,7 @@ namespace Smirnov
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("GitHub");
         }
     }
 }
