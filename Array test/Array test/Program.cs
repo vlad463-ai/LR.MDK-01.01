@@ -16,6 +16,10 @@ namespace Array_test
             massiv [2] = "Fa";
 
             massiv[1] = "OG";
+            foreach(string n in massiv)
+            {
+                Console.WriteLine("Элеметы массива" + " "+ n);
+            }
 
             
         }
