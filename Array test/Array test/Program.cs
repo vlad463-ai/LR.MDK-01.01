@@ -26,7 +26,24 @@ namespace Array_test
             array[1] = massiv[1];
             array[0] = massiv[2];
 
-            
+            int[] mass = new int[10000];
+            for(int i = 0; i<mass.Length;i++)
+            {
+                mass[i] = 1+i;
+
+            }
+            Console.Write("[");
+            for (int i = 0; i < mass.Length-1; i++)
+            {
+                Console.Write(mass[i] + ",");
+
+            }
+            Console.Write(mass.Length);
+            Console.WriteLine("]");
+
+
+
+
 
 
 
