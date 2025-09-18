@@ -10,6 +10,11 @@ namespace Array_test
     {
         static void Main(string[] args)
         {
+            string[] massiv = new string[3];
+            massiv [0] = "Gu";
+            massiv [1] = "RA";
+            massiv [2] = "Fa";
+            
         }
     }
 }
