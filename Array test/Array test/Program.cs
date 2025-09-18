@@ -14,6 +14,9 @@ namespace Array_test
             massiv [0] = "Gu";
             massiv [1] = "RA";
             massiv [2] = "Fa";
+
+            massiv[1] = "OG";
+
             
         }
     }
