@@ -18,10 +18,23 @@ namespace Array_test
             massiv[1] = "OG";
             foreach(string n in massiv)
             {
-                Console.WriteLine("Элеметы массива" + " "+ n);
+                Console.WriteLine("Элемет массива" + " "+ n);
             }
 
+            string[] array = new string[3];
+            array[2] = massiv[0];
+            array[1] = massiv[1];
+            array[0] = massiv[2];
+
             
+
+
+
+
+
+
+
+
         }
     }
 }
