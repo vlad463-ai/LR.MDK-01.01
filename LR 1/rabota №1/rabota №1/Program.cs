@@ -17,6 +17,7 @@ namespace rabota__1
             int [] array = new int[razMas];
             int sumChet = 0;
             int sumNechet = 0;
+            Console.WriteLine("Введите целые числа массива");
             for (int index = 0; index<array.Length;index++)
             {
                 array[index] = Convert.ToInt32(Console.ReadLine());
@@ -34,9 +35,12 @@ namespace rabota__1
                 else sumNechet++;
 
             }
-            Console.WriteLine("сумма четный чисел" + sumChet);
-            Console.WriteLine("сумма четный чисел" + sumNechet);
-
+            Console.WriteLine();
+            Console.WriteLine("сумма четный чисел " + sumChet);
+            Console.WriteLine();
+            Console.WriteLine("сумма четный чисел " + sumNechet);
+            Console.WriteLine();
+            Console.WriteLine("Полученный массив");
             foreach (int element in array)
             {
                 Console.WriteLine(element);
