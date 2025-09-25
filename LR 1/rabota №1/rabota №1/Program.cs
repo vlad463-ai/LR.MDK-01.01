@@ -14,20 +14,15 @@ namespace rabota__1
             Console.WriteLine("Введите размер массива");
             int razMas = Convert.ToInt32(Console.ReadLine());
             int [] array = new int[razMas];
+            for(int index = 0; index<array.Length;index++)
+            {
+                array[index] = Convert.ToInt32(Console.ReadLine());
+            }
+            foreach (int element in array)
+            {
+                Console.WriteLine(element);
+            }
             
-            foreach (int element in array)
-            {
-                Console.WriteLine(element);
-            }
-            // С клавиатуры ввести массив из n целых чисел.Подсчитать количество четных и нечетных элементов.
-            Console.WriteLine("Введите размер массива");
-            int razMas = Convert.ToInt32(Console.ReadLine());
-            int[] array = new int[razMas];
-
-            foreach (int element in array)
-            {
-                Console.WriteLine(element);
-            }
 
 
         }
