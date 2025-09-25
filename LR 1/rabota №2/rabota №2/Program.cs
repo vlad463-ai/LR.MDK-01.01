@@ -10,21 +10,38 @@ namespace rabota__2
     {
         static void Main(string[] args)
         {
-            //2.Дана последовательность 3000 случайных чисел от 10 до 9999.
-            //Сохранить в отдельной структуре данных сумму пар 
-            //соседних элементов, находящихся на нечетных пози
-            //циях(1 и 3, 3 и 5, 5 и 7 и т.д).Результат вывести на экран в 
-            //формате: [a1, a2, a3, ….., an], где 
-            //а – очередное найденное число.
-
+            //Создание массива
             int[] array = new int[3000];
             Random ran = new Random();
             for(int i =0;i<array.Length;i++)
             {
                 array[i] = ran.Next(10, 9999);
+                
             }
 
-            foreach(int element in array)
+            int[] summa = new int[1500];
+            for(int index =0;index<summa.Length;index++)
+            { 
+               for(int i=1 ;i < summa.Length; i++)
+               {
+                  for(int j =i+2; j< summa.Length ;j++)
+                  {
+                    summa[i] = array[i] + array[j];
+                  }
+               }
+            
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            //Массив исходный
+            foreach (int element in array)
+            {
+                Console.Write(element + ",");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            // массив с суммой
+            foreach (int element in summa)
             {
                 Console.Write(element + ",");
             }
