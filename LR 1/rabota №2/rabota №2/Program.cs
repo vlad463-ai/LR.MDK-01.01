@@ -15,7 +15,7 @@ namespace rabota__2
             Random ran = new Random();
             for(int i =0;i<array.Length;i++)
             {
-                array[i] = ran.Next(10, 9999);
+                array[i] = ran.Next(10, 10000);
                 
             }
 
