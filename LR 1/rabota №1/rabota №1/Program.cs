@@ -36,9 +36,9 @@ namespace rabota__1
 
             }
             Console.WriteLine();
-            Console.WriteLine("сумма четный чисел " + evenNumbers);
+            Console.WriteLine("сумма четных чисел " + evenNumbers);
             Console.WriteLine();
-            Console.WriteLine("сумма четный чисел " + oddNumbers);
+            Console.WriteLine("сумма нечетных чисел " + oddNumbers);
             Console.WriteLine();
             Console.WriteLine("Полученный массив");
             foreach (int element in array)
