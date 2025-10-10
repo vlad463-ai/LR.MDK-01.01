@@ -11,7 +11,7 @@ namespace rabota__2
         static void Main(string[] args)
         {
             //Создание массива
-            int[] array = new int[3000];
+            int[] array = new int[10];
             Random random = new Random();
             for(int i = 0;i<array.Length;i++)
             {
@@ -34,6 +34,14 @@ namespace rabota__2
                 leftNumber = rightNumber; ;
                 rightNumber = leftNumber + 2;
             }
+            Console.WriteLine();
+            Console.WriteLine("Сумма пар нечетных чисел");
+            Console.Write("[ ");
+            for (int i = 0; i < pairsSum.Count; i++)
+            {
+                Console.Write(pairsSum[i] + " ");
+            }
+            Console.Write("]");
 
 
 
