@@ -24,6 +24,9 @@ namespace rabota__2
                 Console.Write(array[i] + " ");
             }
             Console.Write("]");
+            List<int> pairsSum = new List<int>();
+            int leftNumber = 1;
+            int rightNumber = 3;
 
 
 
