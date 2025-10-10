@@ -28,6 +28,13 @@ namespace rabota__2
             int leftNumber = 1;
             int rightNumber = 3;
 
+            while(rightNumber<array.Length)
+            {
+                pairsSum.Add(array[leftNumber] + array[rightNumber]);
+                leftNumber = rightNumber; ;
+                rightNumber = leftNumber + 2;
+            }
+
 
 
 
