@@ -12,12 +12,12 @@ namespace rabota__1
         static void Main(string[] args)
         {
             // С клавиатуры ввести массив из n целых чисел.Подсчитать количество четных и нечетных элементов.
-            Console.WriteLine("Введите размер массива");
+            Console.WriteLine("Введите размер массива: ");
             int sizeArray = Convert.ToInt32(Console.ReadLine());
             int [] array = new int[sizeArray];
             int evenNumbers = 0;
             int oddNumbers = 0;
-            Console.WriteLine("Введите целые числа массива");
+            Console.WriteLine("Введите целые числа массива: ");
             for (int index = 0; index<array.Length;index++)
             {
                 array[index] = Convert.ToInt32(Console.ReadLine());
