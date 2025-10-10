@@ -15,8 +15,8 @@ namespace rabota__1
             Console.WriteLine("Введите размер массива");
             int sizeArray = Convert.ToInt32(Console.ReadLine());
             int [] array = new int[sizeArray];
-            int sumChet = 0;
-            int sumNechet = 0;
+            int evenNumbers = 0;
+            int oddNumbers = 0;
             Console.WriteLine("Введите целые числа массива");
             for (int index = 0; index<array.Length;index++)
             {
@@ -29,16 +29,16 @@ namespace rabota__1
             {
                 if (array[i] % 2 == 0)
                 {
-                    sumChet++;
+                    evenNumbers++;
 
                 }
-                else sumNechet++;
+                else oddNumbers++;
 
             }
             Console.WriteLine();
-            Console.WriteLine("сумма четный чисел " + sumChet);
+            Console.WriteLine("сумма четный чисел " + evenNumbers);
             Console.WriteLine();
-            Console.WriteLine("сумма четный чисел " + sumNechet);
+            Console.WriteLine("сумма четный чисел " + oddNumbers);
             Console.WriteLine();
             Console.WriteLine("Полученный массив");
             foreach (int element in array)
