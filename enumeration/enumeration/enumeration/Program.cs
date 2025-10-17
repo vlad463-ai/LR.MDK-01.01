@@ -1,5 +1,7 @@
 ﻿
 
+using System;
+
 namespace enumeration
 {
     internal class Program
@@ -16,7 +18,14 @@ namespace enumeration
         }
         static void Main(string[] args)
         {
+            DayOfWeek today = DayOfWeek.Saturday;
 
+            Console.WriteLine($"Сегодня: {today}");
+
+            if (today == DayOfWeek.Saturday)
+            {
+                Console.WriteLine("Суббота! Скоро домой! ");
+            }
         }
     }
 }
