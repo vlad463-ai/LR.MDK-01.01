@@ -15,9 +15,29 @@ namespace Dictionary
     }
     internal class Program
     {
-        static public void RemoveBook(Dictionary<Genre, List<string>> allBooks,
-                                   string bookName)
+
+        static public void AddBook(Dictionary<Genre, List<string>> allBooks, string NewBook)
         {
+            foreach (List<string> books in allBooks.Values)
+            {
+                for (int index = 0; index < books.Count; ++index)
+                {
+                    if (books[index] == NewBook)
+                    {
+                        Console.WriteLine("Такая книга уже есть ");
+                        
+                    }
+                    else if (books[index] != NewBook)
+                    {
+                        books.Add(NewBook);
+                        index++;
+                    }
+                }
+            }
+        }
+        static public void RemoveBook(Dictionary<Genre, List<string>> allBooks, string bookName)
+        { 
+        
             foreach (List<string> books in allBooks.Values)
             {
                 for (int index = 0; index < books.Count; ++index)
@@ -103,6 +123,12 @@ namespace Dictionary
             Console.WriteLine("Набор книг после удаления");
             Console.WriteLine();
             PrintBooksByGenre(genre, catalogBooks);
+
+            Console.WriteLine("Какую книгу хотите добавить: ");
+            string NewBook = Console.ReadLine();
+            AddBook(catalogBooks, NewBook);
+            PrintBooksByGenre(genre, catalogBooks);
+
         }
     }
 }
