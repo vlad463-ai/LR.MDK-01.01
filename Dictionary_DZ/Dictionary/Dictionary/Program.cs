@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,6 +16,19 @@ namespace Dictionary
     }
     internal class Program
     {
+        static public void EditingBooks(Dictionary<Genre, List<string>> allBooks, string UserBook,string editBook)
+        {
+            foreach (List<string> books in allBooks.Values)
+            {
+                for (int index = 0; index < books.Count; ++index)
+                {
+                    if (books[index] ==UserBook )
+                    {
+                        books[index] = editBook;
+                    }
+                }
+            }
+        }
 
         static public void AddBook(Dictionary<Genre, List<string>> allBooks, string NewBook)
         {
@@ -127,6 +141,13 @@ namespace Dictionary
             Console.WriteLine("Какую книгу хотите добавить: ");
             string NewBook = Console.ReadLine();
             AddBook(catalogBooks, NewBook);
+            PrintBooksByGenre(genre, catalogBooks);
+
+            Console.WriteLine("Какую книгу изменяем: ");
+            string UserBook = Console.ReadLine();
+            Console.WriteLine("Как изменяем книгу: ");
+            string editBook = Console.ReadLine();
+            EditingBooks(catalogBooks, UserBook, editBook);
             PrintBooksByGenre(genre, catalogBooks);
 
         }
