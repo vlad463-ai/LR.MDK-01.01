@@ -11,11 +11,24 @@ namespace Dictionary
         static public void AllElementValues(Dictionary<string, List<string>> Dictionary)
         {
             Console.WriteLine("Какая цена вам интересна (Дорогие, Средние, Дешёвые): ");
-            string UserRequest = Console.ReadLine();
-            List<string> brands = Dictionary[UserRequest];
-            Console.WriteLine("Число марок автомобилей: " +Dictionary.Values.Count);
-            Console.Write("Все марки автомобилей: " +string.Join(", ", brands));
-            
+            string UserRequest = Console.ReadLine().ToLower();
+            List<string> brands = new List<string>();
+            foreach (string key in Dictionary.Keys)
+            {
+                brands.Add(key.ToLower());
+                if (brands.Contains(UserRequest))
+                {
+                    List<string> value = Dictionary[key];
+                    Console.WriteLine("Число элементов: " + value.Count);
+                    Console.Write(string.Join(", ", value));
+                    return;
+                }
+            }
+            if (!brands.Contains(UserRequest))
+            {
+                Console.WriteLine("Ай-яй-яй, такого жанра нету");
+            }
+
         }
         static void Main(string[] args)
         {
