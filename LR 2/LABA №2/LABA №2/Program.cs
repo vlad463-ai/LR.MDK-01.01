@@ -17,7 +17,10 @@ namespace LABA__2
         }
         static void Main()
         {
+            string[] commands = new string[] { "1 команда", "2 команда", "3 команда", "4 команда", "5 команда", "6 команда" };
+            var (spast, name, goals) = functions_command.Comandinputdata();
 
+            string userQuery = functions_command.InputUserQuery();
         }
     }
 }
