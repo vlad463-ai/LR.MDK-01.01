@@ -49,6 +49,51 @@ namespace DistanceEducation
             Console.WriteLine("Самый продаваемый телефон: " + BestSellingPhone);
             Console.WriteLine("Телефон с маньшим кол-вом продаж: " + UnsoldPhone);
 
+
+
+        }
+
+        static public void FindMostProfitablePhones(List<SalePhone> Sale_phones, List<Phone> Phones) // найти самые прибыльные телефоны
+        {
+            string firstBest = ""; //1 место
+            string secondbest = "";// 2 место
+            int firstRevenue = 0; // прибыль на 1 месте
+            int secontrevenue = 0;//прибыль на 2 месте
+
+
+
+            foreach (var phone in Phones)
+            {
+                foreach (var phone2 in Sale_phones)
+                {
+                    int profit = phone.Price * phone2.Sold;
+
+                    if (profit > firstRevenue)
+                    {
+                        secontrevenue = firstRevenue;
+                        secondbest = firstBest;
+
+                        firstRevenue = profit;
+                        firstBest = phone.Model;
+                    }
+
+                    else if (profit > secontrevenue)
+                    {
+                        secontrevenue = profit;
+                        secondbest = phone.Model;
+                    }
+                }
+
+
+
+
+            }
+            Console.WriteLine("Телефоны с наибольшей выручкойx: ");
+            Console.WriteLine($"Телефон на первом месте: {firstBest} - его цена:  {firstRevenue}");
+            Console.WriteLine($"Телефон на втором месте:{secondbest} - его цена:  {secontrevenue}");
+
+
+
         }
     }
 }
