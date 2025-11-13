@@ -21,6 +21,13 @@ namespace LABA__2
             var (spast, name, goals) = functions_command.Comandinputdata();
 
             string userQuery = functions_command.InputUserQuery();
+            int indexcommand = ShearchingModuke.FindIndexteam(userQuery, commands);
+
+            if (indexcommand < 0)
+            {
+                Console.WriteLine("Указана несуществующая команда");
+                return;
+            }
         }
     }
 }
