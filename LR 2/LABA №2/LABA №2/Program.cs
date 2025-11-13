@@ -29,6 +29,12 @@ namespace LABA__2
                 return;
             }
             var (teamspast, teamnamess, goal) = ShearchingModuke.FindingEverythingForTheTeam(indexcommand, name, spast, goals);
+            Console.Write("Имена  игроков команды: ");
+            PrintPlayer(teamnamess);
+            Console.Write("Очки выбраной команды: ");
+            PrintGoalsOrScore(teamspast);
+            Console.Write("Голы каждого игрока: ");
+            PrintGoalsOrScore(goal);
         }
     }
 }
