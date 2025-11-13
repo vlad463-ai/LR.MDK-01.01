@@ -35,6 +35,10 @@ namespace LABA__2
             PrintGoalsOrScore(teamspast);
             Console.Write("Голы каждого игрока: ");
             PrintGoalsOrScore(goal);
+            int maxNumder = AnalysisDataModules.MaxScoreTeams(spast);
+            int backlog = AnalysisDataModules.LaggingBehindFirstPlace(teamspast, maxNumder);
+            Console.WriteLine("Отставание от первого места: " + backlog + " очков");
+            AnalysisDataModules.SortPlayers(teamnamess, goal);
         }
     }
 }
