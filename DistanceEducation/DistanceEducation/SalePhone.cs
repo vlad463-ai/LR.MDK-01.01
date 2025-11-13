@@ -12,5 +12,6 @@ namespace DistanceEducation
         public string PhoneModel;
         public DateTime Date;
 
+
     }
 }
