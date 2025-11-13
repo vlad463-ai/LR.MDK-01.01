@@ -68,6 +68,10 @@ namespace DistanceEducation
             Sale_5.PhoneModel = "Iphone_15";
             Sale_5.Date = new DateTime(2024, 11, 5);
             Sale_phones.Add(Sale_5);
+
+            Phone.CalculateTotalSales(Sale_phones, Phones);
+            SalePhone.FindBestAndworstSelling(Sale_phones);
+            SalePhone.FindMostProfitablePhones(Sale_phones, Phones);
         }
     }
 }
