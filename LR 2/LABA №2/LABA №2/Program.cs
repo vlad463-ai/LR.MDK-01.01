@@ -28,6 +28,7 @@ namespace LABA__2
                 Console.WriteLine("Указана несуществующая команда");
                 return;
             }
+            var (teamspast, teamnamess, goal) = ShearchingModuke.FindingEverythingForTheTeam(indexcommand, name, spast, goals);
         }
     }
 }
