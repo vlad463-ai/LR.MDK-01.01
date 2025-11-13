@@ -89,5 +89,10 @@ namespace LABA__2
             goalsplauers[5].Add(29);
             return (teamшspast, players, goalsplauers);
         }
+        static public string InputUserQuery() // входной пользовательский запрос
+        {
+            Console.Write("Введите, пожалуйста, название команды: ");
+            return Console.ReadLine();
+        }
     }
 }
