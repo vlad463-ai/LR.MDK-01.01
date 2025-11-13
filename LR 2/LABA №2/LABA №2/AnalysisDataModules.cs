@@ -28,5 +28,33 @@ namespace LABA__2
                 }
             }
         }
+        static public int MaxScoreTeams(List<int>[] scores) //максимальный балл команд
+        {
+            int max = 0;
+            for (int i = 0; i < scores.Length; i++)
+            {
+                int k = 0;
+                List<int> temp = scores[i];
+                foreach (int h in temp)
+                {
+                    k += h;
+                }
+                if (max < k)
+                {
+                    max = k;
+                }
+            }
+            return max;
+        }
+        static public int LaggingBehindFirstPlace(List<int> scores, int max) // отставание от первого места
+        {
+            int i = 0;
+            foreach (int t in scores)
+            {
+                i += t;
+            }
+            int v = max - i;
+            return v;
+        }
     }
 }
