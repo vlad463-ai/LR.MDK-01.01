@@ -31,7 +31,7 @@ namespace DistanceEducation
                     }
                 }
             }
-            Console.WriteLine("Общая сумма продаж" + AmountSales);
+            Console.WriteLine("Общая сумма продаж: " + AmountSales);
         }
     }
 }
