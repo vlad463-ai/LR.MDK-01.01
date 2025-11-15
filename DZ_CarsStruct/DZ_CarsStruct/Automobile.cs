@@ -31,7 +31,7 @@ namespace DZ_CarsStruct
 
             for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine($"{CopyAuto[i].Name},{CopyAuto[i].Price},{CopyAuto[i].Speed}");
+                Console.WriteLine($" Имя авто: {CopyAuto[i].Name}, её цена {CopyAuto[i].Price}, скорость{CopyAuto[i].Speed}");
                 ;
             }
         }
