@@ -7,7 +7,7 @@ namespace LR_2_NEW
     {
         static public string InputUserRequest() // Запрос пользователя 
         {
-            Console.WriteLine("Введите пожалуйста букву локального диска (Диск C или Диск D): ");
+            Console.WriteLine("Введите пожалуйста локальный диск (Диск C или Диск D): ");
             return Console.ReadLine();
         }
     }

@@ -10,7 +10,7 @@ namespace LR_2_NEW
         static public List<catalog> СataloguesThisНear(Disk diskС, Disk diskD, string user) // каталоги этого года
         {
             List<catalog> Yearthese = new List<catalog>(); // список в котором будут лежать каталоги этого года
-            if (diskС.Name == user)
+            if (diskС.Name.ToLower() == user.ToLower())
             {
                 foreach (catalog catalog in diskС.catalogs)
                 {

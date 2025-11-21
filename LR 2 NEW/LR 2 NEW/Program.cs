@@ -22,30 +22,30 @@ namespace LR_2_NEW
             List<catalog> C = new List<catalog>();
 
 
-            C.Add( new catalog { name = "Пользователь", yearCreation = 2020, numberRequests = 10 }); // идет заполнение диска C
-            C.Add( new catalog { name = "User", yearCreation = 2021, numberRequests = 15 });
-            C.Add( new catalog { name = "Admin", yearCreation = 2022, numberRequests = 25 });
-            C.Add( new catalog { name = "Intel", yearCreation = 2025, numberRequests = 40 });
-            C.Add( new catalog { name = "Tanki", yearCreation = 2025, numberRequests = 5 });
+            C.Add(new catalog { name = "Пользователь", yearCreation = 2025, numberRequests = 10 }); // идет заполнение диска C
+            C.Add(new catalog { name = "User", yearCreation = 2025, numberRequests = 15 });
+            C.Add(new catalog { name = "Admin", yearCreation = 2025, numberRequests = 25 });
+            C.Add(new catalog { name = "Intel", yearCreation = 2025, numberRequests = 40 });
+            C.Add(new catalog { name = "Tanki", yearCreation = 2025, numberRequests = 5 });
 
             List<catalog> D = new List<catalog>();
 
-            D.Add( new catalog { name = "Vertigo", yearCreation = 2022, numberRequests = 60 });// идет заполнение диска D
-            D.Add( new catalog { name = "Kompas", yearCreation = 2024, numberRequests = 90 });
-            D.Add( new catalog { name = "Android", yearCreation = 2025, numberRequests = 100 });
-            D.Add( new catalog { name = "Windows", yearCreation = 2025, numberRequests = 1 });
-            D.Add( new catalog { name = "Steam", yearCreation = 2025, numberRequests = 1000 });
+            D.Add(new catalog { name = "Vertigo", yearCreation = 2025, numberRequests = 60 });// идет заполнение диска D
+            D.Add(new catalog { name = "Kompas", yearCreation = 2025, numberRequests = 90 });
+            D.Add(new catalog { name = "Android", yearCreation = 2025, numberRequests = 100 });
+            D.Add(new catalog { name = "Windows", yearCreation = 2025, numberRequests = 1 });
+            D.Add(new catalog { name = "Steam", yearCreation = 2025, numberRequests = 1000 });
 
 
-            Disk diskC = new Disk();
-            diskC.Name = "Диск С";
-            diskC.catalogs = C;
-            Disk diskD = new Disk();
-            diskC.Name = "Диск Д";
-            diskC.catalogs = D;
+            Disk disk_C = new Disk(); // Диск C
+            disk_C.Name = "Диск C";
+            disk_C.catalogs = C;
+            Disk disk_D = new Disk(); // Диск D
+            disk_D.Name = "Диск D";
+            disk_D.catalogs = D;
 
             string user = userRequest.InputUserRequest();
-            List<catalog> Yearthese = AnalisisDateModule.СataloguesThisНear(diskC, diskD, user);
+            List<catalog> Yearthese = AnalisisDateModule.СataloguesThisНear(disk_C, disk_D, user);
             AnalisisDateModule.SortDescendingOrder(Yearthese);
             int countRequest = AnalisisDateModule.AverageNumberRequest(Yearthese);
             Print(Yearthese, countRequest);
