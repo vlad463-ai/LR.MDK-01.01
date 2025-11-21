@@ -36,5 +36,22 @@ namespace LR_2_NEW
             }
             return Yearthese;
         }
+        static public void SortDescendingOrder(List<catalog> Yearthese) // сортировка по убыванию
+        {
+            catalog temp;
+            for (int i = 0; i < Yearthese.Count; i++)
+            {
+                for (int j = 0; j < Yearthese.Count - 1; j++)
+                {
+                    if (Yearthese[j].numberRequests > Yearthese[j + 1].numberRequests)
+                    {
+                        temp = Yearthese[j];
+                        Yearthese[j] = Yearthese[j + 1];
+                        Yearthese[j + 1] = temp;
+                    }
+                }
+                
+            }
+        }
     }
 }
