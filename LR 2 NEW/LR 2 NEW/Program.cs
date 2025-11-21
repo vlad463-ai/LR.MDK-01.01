@@ -47,7 +47,8 @@ namespace LR_2_NEW
             string user = userRequest.InputUserRequest();
             List<catalog> Yearthese = AnalisisDateModule.СataloguesThisНear(diskC, diskD, user);
             AnalisisDateModule.SortDescendingOrder(Yearthese);
-
+            int countRequest = AnalisisDateModule.AverageNumberRequest(Yearthese);
+            Print(Yearthese, countRequest);
 
 
 
