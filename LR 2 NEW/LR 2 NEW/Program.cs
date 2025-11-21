@@ -1,11 +1,21 @@
 ﻿
 
+using System;
 using System.Collections.Generic;
 
 namespace LR_2_NEW
 {
     class Program
     {
+        static public void Print(List<catalog> Yearthese, int count)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(Yearthese[i].name);
+            }
+            Console.WriteLine("Cреднее количество обращений: " + count);
+            ;
+        }
         static void Main()
         {
 
@@ -37,6 +47,7 @@ namespace LR_2_NEW
             string user = userRequest.InputUserRequest();
             List<catalog> Yearthese = AnalisisDateModule.СataloguesThisНear(diskC, diskD, user);
             AnalisisDateModule.SortDescendingOrder(Yearthese);
+
 
 
 
