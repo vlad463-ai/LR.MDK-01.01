@@ -53,5 +53,16 @@ namespace LR_2_NEW
                 
             }
         }
+        static public int AverageNumberRequest(List<catalog> Yearthese) // среднее количество обращений
+        {
+            int temp = 0;
+            foreach (catalog catalog in Yearthese)
+            {
+                temp += catalog.numberRequests;
+            }
+            int result = temp / 5;
+            return result;
+
+        }
     }
 }
