@@ -35,6 +35,7 @@ namespace LR_2_NEW
             diskC.catalogs = D;
 
             string user = userRequest.InputUserRequest();
+            List<catalog> Yearthese = AnalisisDateModule.СataloguesThisНear(diskC, diskD, user);
 
 
 
