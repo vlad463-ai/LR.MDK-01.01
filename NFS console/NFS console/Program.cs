@@ -37,20 +37,29 @@ namespace NFS_console
         }
         static public void LadaVsMerc(List<Car> cars) // функция для гонок
         {
-            int speed = 1;
+            int time = 0;
+            int finish = 80;
             while (true)
             {
                 foreach (Car auto in cars)
                 {
-                     for (int i = 0; i <auto.GetSpeed() / 50 * speed; i++)
+                    double speed = (auto.GetSpeed() / 50) * time;
+                     for (int i = 0; i < speed; i++)
                      {
                         Console.Write(" ");
+                        if ( speed>= finish)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Победитель" + auto.GetModel());
+                            return;
+                        }
                      }
-                    Console.Write(auto.GetModel());
-                    Console.WriteLine();
+                    Console.WriteLine(auto.GetModel());
+                   
+                    Console.WriteLine("----------------------------------------"); 
                     
-                     speed++;
                 }
+                time++;
                 Thread.Sleep(500);
                 Console.Clear();
             }
