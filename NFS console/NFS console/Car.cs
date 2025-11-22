@@ -11,9 +11,20 @@ namespace NFS_console
         {
             return model_;
         }
+
+        public string GetSpeed()
+        {
+            return speed_;
+        }
+
         public void SetModel(string model)
         {
             model_ = model;
+        }
+
+        public void SetSpeed(int speed)
+        {
+            speed_ = speed;
         }
 
      }
