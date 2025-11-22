@@ -7,6 +7,8 @@ namespace NFS_console
         static void Main()
         {
             Car auto = new Car();
+            auto.SetModel("Лада");
+
         }
     }
 }
