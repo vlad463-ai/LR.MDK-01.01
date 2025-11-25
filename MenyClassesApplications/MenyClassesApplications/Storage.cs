@@ -1,5 +1,5 @@
 ﻿
-
+using System;
 using System.Collections.Generic;
 
 namespace MenyClassesApplications
@@ -8,7 +8,7 @@ namespace MenyClassesApplications
     {
         private int identifier_; // идентификатор
         private string location_; // место локации
-        private Dictionary<Product,int> Products_; // словарь с ключом Product(имя и цена) а значение это количество 
+        private Dictionary<Product,int> Products_ = new Dictionary<Product, int>(); // словарь с ключом Product(имя и цена) а значение это количество 
         
         public void  SetIdentifier(int identifier) // Метод добавления идентификатора
         {
@@ -18,9 +18,28 @@ namespace MenyClassesApplications
         {
             location_ = location;
         }
-        public void SetProductQuantity(Product product, int quantity) // метод добавления product(имя и цена) и количества
+        public void SetProductQuantity(Product product, int quantity) // метод добавления товара(имя и цена) и  его количества
         {
             Products_.Add(product, quantity);
+        }
+
+        public void Print() // Сделал вывод машина - её количество
+        {
+            foreach(Product key in Products_.Keys)
+            {
+                Console.WriteLine(key.GetName() + " "+  Products_[key] + " шт.");
+            }
+        }
+
+        public double PrintAllMoney() // реализовал вывод на консоль общей  суммы
+        {
+            double total = 0;
+            foreach (Product key in Products_.Keys)
+            {
+                double summ = Products_[key] * key.GetPrice();
+                total += summ;
+            }
+            return total;
         }
     }
 }
