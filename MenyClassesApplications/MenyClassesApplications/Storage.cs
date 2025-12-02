@@ -31,15 +31,15 @@ namespace MenyClassesApplications
             }
         }
 
-        public double PrintAllMoney() // реализовал вывод на консоль общей  суммы
+        public void PrintAllMoney() // реализовал вывод на консоль общей  суммы
         {
-            double total = 0;
+            double summ = 0;
             foreach (Product key in Products_.Keys)
             {
-                double summ = Products_[key] * key.GetPrice();
-                total += summ;
+                summ += Products_[key] * key.GetPrice();
+                
             }
-            return total;
+            Console.WriteLine(summ);
         }
     }
 }

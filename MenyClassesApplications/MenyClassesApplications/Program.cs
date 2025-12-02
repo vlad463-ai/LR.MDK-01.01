@@ -21,7 +21,7 @@ namespace MenyClassesApplications
             storage.SetProductQuantity(UAZ, 5);
 
             storage.Print();
-            double total = storage.PrintAllMoney(); //Сделал вывод на консоль двух функций для печати
+            storage.PrintAllMoney(); //Сделал вывод на консоль двух функций для печати
 
 
 
