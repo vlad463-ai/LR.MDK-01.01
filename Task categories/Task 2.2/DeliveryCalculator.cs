@@ -4,9 +4,9 @@ using System;
 
 namespace Task_2._2
 {
-    public class DeliveryCalculator
+    public class DeliveryCalculator // создал класс DeliveryCalculator
     {
-        static public void deliveryCalculator(Order order)
+        static public void deliveryCalculator(Order order) //реализовал функцию для расчета доставки
         {
             double cost = 200;
             cost += order.GetWeight() * 40;

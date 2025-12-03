@@ -4,9 +4,9 @@ using System;
 
 namespace Task_2._2
 {
-    public class FraudChecker
+    public class FraudChecker // создал класс FraudChecker
     {
-        static public void fraudChecker(Order order)
+        static public void fraudChecker(Order order) // функция для проверки на машенничество
         {
             if (order.GetTotalAmount() > 1000000) // Больше миллиона
             {

@@ -4,9 +4,9 @@ using System;
 
 namespace Task_2._2
 {
-    class PaymentHandler
+    class PaymentHandler // создал класс PaymentHandler
     {
-         static public void DoWork(Order order)
+         static public void DoWork(Order order) // реализовал функцию для  обработки зарплаты
         {
             if (order.GetPaymentMethod() == "Карта")
             {

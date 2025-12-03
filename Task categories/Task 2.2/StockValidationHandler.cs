@@ -4,9 +4,9 @@ using System;
 
 namespace Task_2._2
 {
-    public class StockValidationHandler
+    public class StockValidationHandler // создал класс StockValidationHandler
     {
-        static public void WarehousInspection(Order order)
+        static public void WarehousInspection(Order order) // функция для проверки товаров
         {
             if (order.GetWeight() <= 0)
             {

@@ -4,7 +4,7 @@ using System;
 
 namespace Task_2._2
 {
-    public class Order
+    public class Order // Создал класс заказы
     {
         private int OrderId_;               // ID заказа
         private double TotalAmount_;       // Общая сумма
@@ -12,7 +12,7 @@ namespace Task_2._2
         private string DestinationCountry_; // Страна доставки
         private string PaymentMethod_;      // Способ оплаты
 
-        public int GetOrderId()
+        public int GetOrderId() // Реализовал 5 методов для вывода данных на экран 
         {
             return OrderId_;
         }
@@ -33,7 +33,7 @@ namespace Task_2._2
             return PaymentMethod_;
         }
 
-        public void SetOrderId(int OrderId)
+        public void SetOrderId(int OrderId) // Реализовал 5 методов для получения данных
         {
             OrderId_ = OrderId;
         }
@@ -61,8 +61,7 @@ namespace Task_2._2
             Console.WriteLine($"Сумма: {TotalAmount_} руб.");
             Console.WriteLine($"Вес: {Weight_} кг");
             Console.WriteLine($"Страна: {DestinationCountry_}");
-            
-            
+
         }
 
 
