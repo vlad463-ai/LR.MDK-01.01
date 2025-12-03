@@ -2,12 +2,12 @@
 
 namespace Task_1._1
 {
-    public class FixedSalaryEmployee
+    public class FixedSalaryEmployee // класс (сотрудник с фиксированной зарплатой)
     {
         private Employee Employee_;
         private double FixedSalary_;
 
-        public void SetEmployee(Employee Employees)
+        public void SetEmployee(Employee Employees) // два метода для получения данных
         {
             Employee_ = Employees;
         }
@@ -15,7 +15,7 @@ namespace Task_1._1
         {
             FixedSalary_ = fixedSalary;
         }
-        public double CalculateSalary()
+        public double CalculateSalary() // подсчет суммы
         {
             return FixedSalary_;
         }

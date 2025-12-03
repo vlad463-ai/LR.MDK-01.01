@@ -2,14 +2,14 @@
 
 namespace Task_1._1
 {
-    public class Employee
+    public class Employee // Сделал класс человек
     {
-        private int ID_;
+        private int ID_; // поля этого класса
         private string FullName_;
         private string Email_;
 
 
-        public void SetID( int id)
+        public void SetID( int id) // Реализация трех функций для получения данных
         {
             ID_ = id;
         }

@@ -2,14 +2,14 @@
 
 namespace Task_1._1
 {
-    public class HourlySalaryEmployee
+    public class HourlySalaryEmployee // класс (работник с почасовой оплатой)
     {
         private Employee Employee_;
         private double salarPenHour_;
         private int hoursWorked_;
         private int overtimeHours_;
 
-        public void SetEmployee(Employee Employees)
+        public void SetEmployee(Employee Employees) // Реализация трех функций для получения данных
         {
             Employee_ = Employees;
         }
@@ -26,7 +26,7 @@ namespace Task_1._1
             overtimeHours_ = OvertimeHours;
         }
 
-        public double CalculateSalary()
+        public double CalculateSalary() // подсчет суммы
         {
             double ordinaryWatch = salarPenHour_ * hoursWorked_;
             double overtime = salarPenHour_ * hoursWorked_ * 1.5;
