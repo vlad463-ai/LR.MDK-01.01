@@ -60,7 +60,7 @@ namespace WindowsFormsTest
             if (OFD2.ShowDialog() == DialogResult.OK)
             {
                 text = OFD2.FileName;
-                FileNamesListBox.Items.
+                FileNamesListBox.Items.выа
 
 
             }
