@@ -14,14 +14,16 @@ namespace MovieRental
         private string actors_;
         private int cost_;
         private DateTime endDate_;
+        private string photo_;
 
-        public CharacteristicsFilms (string name, string director, string actors, int cost, DateTime endDate)
+        public CharacteristicsFilms (string name, string director, string actors, int cost, DateTime endDate, string photo)
         {
             name_ = name;
             director_ = director;
             actors_ = actors;
             cost_ = cost;
             endDate_ = endDate;
+            photo_ = photo;
         }
 
         public string Name
@@ -44,6 +46,14 @@ namespace MovieRental
         public DateTime EndDate
         {
             get { return endDate_; }
+        }
+        public string GetFullInfo()
+        {
+            return $"Название: {name_}\n" +
+                   $"Режиссер: {director_}\n" +
+                   $"Актеры: {actors_}\n" +
+                   $"Стоимость проката: {cost_} руб.\n" +
+                   $"Срок завершения проката: {endDate_:dd.MM.yyyy}\n";
         }
 
     }
