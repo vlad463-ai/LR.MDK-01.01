@@ -47,6 +47,10 @@ namespace MovieRental
         {
             get { return endDate_; }
         }
+        public string Photo
+        {
+            get { return photo_; }
+        }
         public string GetFullInfo()
         {
             return $"Название: {name_}\n" +

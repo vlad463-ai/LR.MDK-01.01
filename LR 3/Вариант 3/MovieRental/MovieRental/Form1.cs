@@ -14,14 +14,16 @@ namespace MovieRental
     {
         List <CharacteristicsFilms> horror = new List <CharacteristicsFilms> ();
         List<CharacteristicsFilms> fantastic = new List<CharacteristicsFilms>();
+        int totalShow = 0;
+
 
         public MainForm()
         {
             InitializeComponent();
-            horror.Add(new CharacteristicsFilms ("Пятница 13", "Виктор Миллер", "Клей Миллер", 1000, new DateTime(2026, 01, 20), "C:\\repo smirnov\\LR 3\\картинки\\ваыв.jpg"));
-            horror.Add(new CharacteristicsFilms("сихиатрическая больница", "Пак Сан Мин ", "Ви Ха Джун", 500, new DateTime(2026, 02, 19), "C:\\repo smirnov\\LR 3\\картинки\\ваыв.jpg"));
-            fantastic.Add(new CharacteristicsFilms("Главный герой", "Шон Леви", "Джоди Комер", 100, new DateTime(2026, 05, 10), "C:\\repo smirnov\\LR 3\\картинки\\ваыв.jpg"));
-            fantastic.Add(new CharacteristicsFilms("Эра выживания", "Кристина Буожите ", "Эдди Марсан", 5000, new DateTime(2026, 01, 15), "C:\\repo smirnov\\LR 3\\картинки\\ваыв.jpg"));
+            horror.Add(new CharacteristicsFilms ("Пятница 13", "Виктор Миллер", "Клей Миллер", 1000, new DateTime(2026, 01, 20), @"D:\\reposmirno\\LR3\\картинки\\"));
+            horror.Add(new CharacteristicsFilms("сихиатрическая больница", "Пак Сан Мин ", "Ви Ха Джун", 500, new DateTime(2026, 02, 19), @"D:\\repo smirno\\LR 3\\картинки\\"));
+            fantastic.Add(new CharacteristicsFilms("Главный герой", "Шон Леви", "Джоди Комер", 100, new DateTime(2026, 05, 10), @"D:\\repo smirno\\LR 3\\картинки\\"));
+            fantastic.Add(new CharacteristicsFilms("Эра выживания", "Кристина Буожите ", "Эдди Марсан", 5000, new DateTime(2026, 01, 15), @"D:\\repo smirno\\LR 3\\картинки\\"));
 
             ListBoxGenre.Items.Add("Хоррор");
             ListBoxGenre.Items.Add("Фантастика");
@@ -98,7 +100,31 @@ namespace MovieRental
 
 
             }
+            if (selectedFilm != null)
+            {
+
+                RichTextBoxInfo.Text = selectedFilm.GetFullInfo();
+            }
+
+            totalShow = (int)NumericUpDownValue.Value;
+            RichTextBoxInfo.Text += $"\nЗаказано показов: {totalShow}";
         }
+        private void comboBoxMovie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string movieName = comboBoxMovie.Text;
+
+
+            foreach (CharacteristicsFilms film in horror)
+                if (film.Name == movieName)
+                    pictureBoxFilm.Load(film.Photo);
+
+            foreach (CharacteristicsFilms film in fantastic)
+                if (film.Name == movieName)
+                    pictureBoxFilm.Load(film.Photo);
+
+        }
+
+       
     }
     
 }
