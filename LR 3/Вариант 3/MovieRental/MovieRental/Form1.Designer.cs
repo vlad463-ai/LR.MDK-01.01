@@ -62,6 +62,7 @@
             this.comboBoxMovie.Name = "comboBoxMovie";
             this.comboBoxMovie.Size = new System.Drawing.Size(320, 37);
             this.comboBoxMovie.TabIndex = 1;
+            this.comboBoxMovie.SelectedIndexChanged += new System.EventHandler(this.comboBoxMovie_SelectedIndexChanged_1);
             // 
             // pictureBoxFilm
             // 

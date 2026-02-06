@@ -20,10 +20,10 @@ namespace MovieRental
         public MainForm()
         {
             InitializeComponent();
-            horror.Add(new CharacteristicsFilms ("Пятница 13", "Виктор Миллер", "Клей Миллер", 1000, new DateTime(2026, 01, 20), @"D:\\reposmirno\\LR3\\картинки\\"));
-            horror.Add(new CharacteristicsFilms("сихиатрическая больница", "Пак Сан Мин ", "Ви Ха Джун", 500, new DateTime(2026, 02, 19), @"D:\\repo smirno\\LR 3\\картинки\\"));
-            fantastic.Add(new CharacteristicsFilms("Главный герой", "Шон Леви", "Джоди Комер", 100, new DateTime(2026, 05, 10), @"D:\\repo smirno\\LR 3\\картинки\\"));
-            fantastic.Add(new CharacteristicsFilms("Эра выживания", "Кристина Буожите ", "Эдди Марсан", 5000, new DateTime(2026, 01, 15), @"D:\\repo smirno\\LR 3\\картинки\\"));
+            horror.Add(new CharacteristicsFilms ("Пятница 13", "Виктор Миллер", "Клей Миллер", 1000, new DateTime(2026, 01, 20), @".\картинки\13.jpg"));
+            horror.Add(new CharacteristicsFilms("сихиатрическая больница", "Пак Сан Мин ", "Ви Ха Джун", 500, new DateTime(2026, 02, 19), @".\картинки\больница.jpg"));
+            fantastic.Add(new CharacteristicsFilms("Главный герой", "Шон Леви", "Джоди Комер", 100, new DateTime(2026, 05, 10), @".\картинки\герой.jpg"));
+            fantastic.Add(new CharacteristicsFilms("Эра выживания", "Кристина Буожите ", "Эдди Марсан", 5000, new DateTime(2026, 01, 15), @".\картинки\эра.jpg"));
 
             ListBoxGenre.Items.Add("Хоррор");
             ListBoxGenre.Items.Add("Фантастика");
@@ -109,22 +109,33 @@ namespace MovieRental
             totalShow = (int)NumericUpDownValue.Value;
             RichTextBoxInfo.Text += $"\nЗаказано показов: {totalShow}";
         }
-        private void comboBoxMovie_SelectedIndexChanged(object sender, EventArgs e)
+     
+
+        private void comboBoxMovie_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             string movieName = comboBoxMovie.Text;
 
 
             foreach (CharacteristicsFilms film in horror)
+            {
                 if (film.Name == movieName)
+                {
+
                     pictureBoxFilm.Load(film.Photo);
+                }
+            }
+                
 
             foreach (CharacteristicsFilms film in fantastic)
+            {
                 if (film.Name == movieName)
+                {
                     pictureBoxFilm.Load(film.Photo);
-
+                }
+                   
+            }
+                
         }
-
-       
     }
     
 }

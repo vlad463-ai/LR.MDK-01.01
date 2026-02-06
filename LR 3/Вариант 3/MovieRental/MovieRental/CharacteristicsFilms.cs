@@ -9,7 +9,6 @@ namespace MovieRental
     internal class CharacteristicsFilms
     {
         private string name_;
-        
         private string director_;
         private string actors_;
         private int cost_;
