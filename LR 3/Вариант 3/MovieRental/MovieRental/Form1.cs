@@ -20,10 +20,10 @@ namespace MovieRental
         public MainForm()
         {
             InitializeComponent();
-            horror.Add(new CharacteristicsFilms ("Пятница 13", "Виктор Миллер", "Клей Миллер", 1000, new DateTime(2026, 01, 20), @".\картинкии\13.jpg"));
-            horror.Add(new CharacteristicsFilms("сихиатрическая больница", "Пак Сан Мин ", "Ви Ха Джун", 500, new DateTime(2026, 02, 19), @".\картинкии\больница.jpg"));
-            fantastic.Add(new CharacteristicsFilms("Главный герой", "Шон Леви", "Джоди Комер", 100, new DateTime(2026, 05, 10), @".\картинкии\ггерой.jpg"));
-            fantastic.Add(new CharacteristicsFilms("Эра выживания", "Кристина Буожите ", "Эдди Марсан", 5000, new DateTime(2026, 01, 15), @".\картинкии\эра.jpg"));
+            horror.Add(new CharacteristicsFilms ("Пятница 13", "Виктор Миллер", "Клей Миллер", 1000, new DateTime(2026, 01, 20), @"C:\REPOO\LR 3\Вариант 3\MovieRental\картинкии\13.jpg"));
+            horror.Add(new CharacteristicsFilms("сихиатрическая больница", "Пак Сан Мин ", "Ви Ха Джун", 500, new DateTime(2026, 02, 19), @"C:\REPOO\LR 3\Вариант 3\MovieRental\картинкии\больница.jpg"));
+            fantastic.Add(new CharacteristicsFilms("Главный герой", "Шон Леви", "Джоди Комер", 100, new DateTime(2026, 05, 10), @"C:\REPOO\LR 3\Вариант 3\MovieRental\картинкии\ггерой.jpg"));
+            fantastic.Add(new CharacteristicsFilms("Эра выживания", "Кристина Буожите ", "Эдди Марсан", 5000, new DateTime(2026, 01, 15), @"C:\REPOO\LR 3\Вариант 3\MovieRental\картинкии\эра.jpg"));
 
             ListBoxGenre.Items.Add("Хоррор");
             ListBoxGenre.Items.Add("Фантастика");
