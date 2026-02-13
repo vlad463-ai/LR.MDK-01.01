@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ModelViewLib.Models;
+using ModelViewLib.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,11 @@ namespace FirstWinFormsLib
         public MainForm()
         {
             InitializeComponent();
+            UsersTableView usersTable = new UsersTableView();
+            Controls.Add(usersTable);
+            usersTable.Dock = DockStyle.Top;
+
+            UserPresenter UserPres = new UserPresenter(new MemoryUsersModels(), usersTable);
         }
     }
 }

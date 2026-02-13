@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35818.85 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstWinFormsLib", "FirstWinFormsLib\FirstWinFormsLib.csproj", "{4C6CD0FF-51A0-43EF-A7BE-FD7FFBC88CA3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstWinFormsMW", "FirstWinFormsLib\FirstWinFormsMW.csproj", "{4C6CD0FF-51A0-43EF-A7BE-FD7FFBC88CA3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelViewLib", "ModelViewLib\ModelViewLib.csproj", "{19196060-85FA-4C70-8B4D-84C594212649}"
 EndProject
