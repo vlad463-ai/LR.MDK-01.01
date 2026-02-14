@@ -14,14 +14,21 @@ namespace FirstWinFormsLib
 {
     public partial class MainForm: Form
     {
+        UsersTableView usersTable_ = new UsersTableView();
         public MainForm()
         {
             InitializeComponent();
-            UsersTableView usersTable = new UsersTableView();
-            Controls.Add(usersTable);
-            usersTable.Dock = DockStyle.Top;
+            
+            Controls.Add(usersTable_);
+            usersTable_.Dock = DockStyle.Top;
+            usersTable_.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            UserPresenter UserPres = new UserPresenter(new MemoryUsersModels(), usersTable);
+            UserPresenter UserPres = new UserPresenter(new MemoryUsersModels(), usersTable_);
+        }
+
+        private void RemoveToolStripButton_Click(object sender, EventArgs e)
+        {
+             
         }
     }
 }

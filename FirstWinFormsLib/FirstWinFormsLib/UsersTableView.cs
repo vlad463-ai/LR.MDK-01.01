@@ -11,6 +11,16 @@ namespace FirstWinFormsLib
 {
     public class UsersTableView : DataGridView, IUsersViews
     {
+        public List<User> GetSelectedUser()
+        {
+            List<User> result = new List<User>();
+            foreach(var row in SelectedRows)
+            {
+                result.Add(row as User);
+            }
+            return result;
+        }
+
         public void Show(List<User> allUsers)
         {
            DataSource = allUsers;

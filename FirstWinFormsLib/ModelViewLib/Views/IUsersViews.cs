@@ -10,5 +10,7 @@ namespace ModelViewLib.Views
     public interface IUsersViews
     {
         void Show(List<User> allUsers);
+
+        List<User> GetSelectedUser();
     }
 }
