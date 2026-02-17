@@ -23,5 +23,10 @@ namespace ModelViewLib.Presenters
             view_.Show(user_);
         }
 
+        public void RemoveUser(List<User> selectedUser)
+        {
+            model_.RemoveUsers(selectedUser);
+            view_.Show(model_.Load());
+        }
     }
 }

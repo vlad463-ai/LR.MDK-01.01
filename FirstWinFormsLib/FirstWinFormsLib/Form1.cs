@@ -1,4 +1,5 @@
 ﻿using ModelViewLib.Models;
+using ModelViewLib.ModelViews;
 using ModelViewLib.Presenters;
 using System;
 using System.Collections.Generic;
@@ -14,21 +15,19 @@ namespace FirstWinFormsLib
 {
     public partial class MainForm: Form
     {
-        UsersTableView usersTable_ = new UsersTableView();
+
+        private UserPresenter presenter_;
         public MainForm()
         {
             InitializeComponent();
-            
-            Controls.Add(usersTable_);
-            usersTable_.Dock = DockStyle.Top;
-            usersTable_.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            UserPresenter UserPres = new UserPresenter(new MemoryUsersModels(), usersTable_);
+            presenter_ = new UserPresenter(new MemoryUsersModels(), usersTableView1);
         }
 
         private void RemoveToolStripButton_Click(object sender, EventArgs e)
         {
-             
+            List<User> selectedUser = usersTableView1.GetSelectedUser();
+            presenter_.RemoveUser(selectedUser);
         }
     }
 }
