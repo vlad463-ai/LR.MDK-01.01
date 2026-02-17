@@ -60,10 +60,11 @@
             // usersTableView1
             // 
             this.usersTableView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usersTableView1.Location = new System.Drawing.Point(94, 143);
+            this.usersTableView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.usersTableView1.Location = new System.Drawing.Point(0, 67);
             this.usersTableView1.Name = "usersTableView1";
             this.usersTableView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.usersTableView1.Size = new System.Drawing.Size(240, 150);
+            this.usersTableView1.Size = new System.Drawing.Size(800, 150);
             this.usersTableView1.TabIndex = 1;
             // 
             // MainForm

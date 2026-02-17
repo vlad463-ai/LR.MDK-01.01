@@ -11,6 +11,6 @@ namespace ModelViewLib.Models
    {
         List<User> Load();
         bool Register(User user);
-        void RemoveUsers(object users);
+        void RemoveUsers(List<User> users);
     }
 }
