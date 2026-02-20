@@ -29,5 +29,10 @@ namespace FirstWinFormsLib
             List<User> selectedUser = usersTableView1.GetSelectedUser();
             presenter_.RemoveUser(selectedUser);
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

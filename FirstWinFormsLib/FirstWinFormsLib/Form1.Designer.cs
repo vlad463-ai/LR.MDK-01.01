@@ -32,6 +32,7 @@
             this.MenuToolStrip = new System.Windows.Forms.ToolStrip();
             this.RemoveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.usersTableView1 = new FirstWinFormsLib.UsersTableView();
+            this.PlusToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.MenuToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersTableView1)).BeginInit();
             this.SuspendLayout();
@@ -39,7 +40,8 @@
             // MenuToolStrip
             // 
             this.MenuToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RemoveToolStripButton});
+            this.RemoveToolStripButton,
+            this.PlusToolStripButton});
             this.MenuToolStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuToolStrip.Name = "MenuToolStrip";
             this.MenuToolStrip.Size = new System.Drawing.Size(800, 67);
@@ -67,6 +69,17 @@
             this.usersTableView1.Size = new System.Drawing.Size(800, 150);
             this.usersTableView1.TabIndex = 1;
             // 
+            // PlusToolStripButton
+            // 
+            this.PlusToolStripButton.AutoSize = false;
+            this.PlusToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.PlusToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("PlusToolStripButton.Image")));
+            this.PlusToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.PlusToolStripButton.Name = "PlusToolStripButton";
+            this.PlusToolStripButton.Size = new System.Drawing.Size(64, 64);
+            this.PlusToolStripButton.Text = "PlusToolStripButton";
+            this.PlusToolStripButton.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -89,6 +102,7 @@
         private System.Windows.Forms.ToolStrip MenuToolStrip;
         private System.Windows.Forms.ToolStripButton RemoveToolStripButton;
         private UsersTableView usersTableView1;
+        private System.Windows.Forms.ToolStripButton PlusToolStripButton;
     }
 }
 

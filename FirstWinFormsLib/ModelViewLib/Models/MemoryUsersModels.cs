@@ -43,5 +43,19 @@ namespace ModelViewLib.Models
                 }
             }
         }
+        public bool AddUser (User u)
+        {
+            if(allUsers_.Contains(u))
+            {
+                return false;
+            }
+            else
+            {
+                allUsers_.Add(u);
+                return true;
+            }
+                    
+                    
+        }
     }
 }
