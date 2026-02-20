@@ -12,43 +12,40 @@ namespace MovieRental
 {
     public partial class MainForm : Form
     {
-        List <CharacteristicsFilms> horror = new List <CharacteristicsFilms> ();
-        List<CharacteristicsFilms> fantastic = new List<CharacteristicsFilms>();
-        int totalShow = 0;
+        List<CharacteristicsFilms> allMovies = new List<CharacteristicsFilms>();
+        int totalShowsXorror = 0;
+        int totalShowsFantasy = 0;
 
 
         public MainForm()
         {
             InitializeComponent();
-            horror.Add(new CharacteristicsFilms ("Пятница 13", "Виктор Миллер", "Клей Миллер", 1000, new DateTime(2026, 01, 20), @"C:\REPOO\LR 3\Вариант 3\MovieRental\картинкии\13.jpg"));
-            horror.Add(new CharacteristicsFilms("сихиатрическая больница", "Пак Сан Мин ", "Ви Ха Джун", 500, new DateTime(2026, 02, 19), @"C:\REPOO\LR 3\Вариант 3\MovieRental\картинкии\больница.jpg"));
-            fantastic.Add(new CharacteristicsFilms("Главный герой", "Шон Леви", "Джоди Комер", 100, new DateTime(2026, 05, 10), @"C:\REPOO\LR 3\Вариант 3\MovieRental\картинкии\ггерой.jpg"));
-            fantastic.Add(new CharacteristicsFilms("Эра выживания", "Кристина Буожите ", "Эдди Марсан", 5000, new DateTime(2026, 01, 15), @"C:\REPOO\LR 3\Вариант 3\MovieRental\картинкии\эра.jpg"));
-
             ListBoxGenre.Items.Add("Хоррор");
-            ListBoxGenre.Items.Add("Фантастика");
+            ListBoxGenre.Items.Add("Фэнтези");
+
+            NumericUpDownValue.Minimum = 1;
+
+            IFilm movieLoader = new StorageFilm();
+            allMovies = movieLoader.Film();
 
         }
 
         private void ListBoxGenre_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxMovie.Items.Clear();
-            string genre = ListBoxGenre.SelectedItem.ToString();
-            if (genre == "Хоррор")
+
+
+            string selectedGenre = ListBoxGenre.SelectedItem.ToString();
+
+            foreach (CharacteristicsFilms movie in allMovies)
             {
-                foreach (CharacteristicsFilms films in horror)
+                if (movie.Genre == selectedGenre)
                 {
-                    comboBoxMovie.Items.Add(films.Name);
+                    comboBoxMovie.Items.Add(movie.Name);
                 }
             }
-            else if (genre == "Фантастика")
-            {
-                foreach (CharacteristicsFilms films in fantastic)
-                {
-                    comboBoxMovie.Items.Add(films.Name);
-                }
-            }
-            if ( comboBoxMovie.Items.Count != 0 )
+
+            if (comboBoxMovie.Items.Count != 0)
             {
                 comboBoxMovie.SelectedIndex = 0;
             }
@@ -58,83 +55,47 @@ namespace MovieRental
 
         private void ButtonReport_Click(object sender, EventArgs e)
         {
-            
-            if (comboBoxMovie.SelectedItem == null)
-            {
-                return;
-            }
 
-            string movieName = comboBoxMovie.SelectedItem.ToString();
-            string genre = ListBoxGenre.SelectedItem.ToString();
-            CharacteristicsFilms selectedFilm = null;
-            if (genre == "Хоррор")
+            if (comboBoxMovie.SelectedItem != null && ListBoxGenre.SelectedItem != null)
             {
-                foreach (CharacteristicsFilms film in horror)
+                string selectedMovieName = comboBoxMovie.SelectedItem.ToString();
+                string selectedGenre = ListBoxGenre.SelectedItem.ToString();
+
+                CharacteristicsFilms selectedMovie = null;
+
+                foreach (CharacteristicsFilms movie in allMovies)
                 {
-                    if (film.Name == movieName)
+                    if (movie.Name == selectedMovieName && movie.Genre == selectedGenre)
                     {
-                        selectedFilm = film;
+                        selectedMovie = movie;
                         break;
                     }
                 }
-            }
-            else if (genre == "Фантастика")
-            {
-                foreach (CharacteristicsFilms film in fantastic)
+                if (selectedMovie != null)
                 {
-                    if (film.Name == movieName)
-                    {
-                        selectedFilm = film;
-                        break;
-                    }
+                    int shows = (int)NumericUpDownValue.Value;
+
+
+                    RichTextBoxInfo.Text = selectedMovie.GetFullInfo();
+                    RichTextBoxInfo.Text += $"\nЗаказано показов: {shows}";
+
                 }
             }
-            if (selectedFilm != null)
-            {
-                RichTextBoxInfo.Text = $"Название: {selectedFilm.Name}\n" +
-                                      $"Режиссер: {selectedFilm.Director}\n" +
-                                      $"Актеры: {selectedFilm.Actors}\n" +
-                                      $"Стоимость: {selectedFilm.Cost} руб.\n" +
-                                      $"До: {selectedFilm.EndDate:dd.MM.yyyy}";
-
-
-
-            }
-            if (selectedFilm != null)
-            {
-
-                RichTextBoxInfo.Text = selectedFilm.GetFullInfo();
-            }
-
-            totalShow = (int)NumericUpDownValue.Value;
-            RichTextBoxInfo.Text += $"\nЗаказано показов: {totalShow}";
         }
      
 
         private void comboBoxMovie_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            string movieName = comboBoxMovie.Text;
+            string movieName = comboBoxMovie.SelectedItem.ToString();
 
-
-            foreach (CharacteristicsFilms film in horror)
+            foreach (CharacteristicsFilms movie in allMovies)
             {
-                if (film.Name == movieName)
+                if (movie.Name == movieName)
                 {
-
-                    pictureBoxFilm.Load(film.Photo);
+                    pictureBoxFilm.Load(movie.Photo);
                 }
             }
-                
 
-            foreach (CharacteristicsFilms film in fantastic)
-            {
-                if (film.Name == movieName)
-                {
-                    pictureBoxFilm.Load(film.Photo);
-                }
-                   
-            }
-                
         }
     }
     

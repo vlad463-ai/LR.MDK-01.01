@@ -14,8 +14,9 @@ namespace MovieRental
         private int cost_;
         private DateTime endDate_;
         private string photo_;
+        private string genre_;
 
-        public CharacteristicsFilms (string name, string director, string actors, int cost, DateTime endDate, string photo)
+        public CharacteristicsFilms(string name, string director, string actors, int cost, DateTime endDate, string photo, string genre)
         {
             name_ = name;
             director_ = director;
@@ -23,13 +24,19 @@ namespace MovieRental
             cost_ = cost;
             endDate_ = endDate;
             photo_ = photo;
+            genre_ = genre;
         }
 
         public string Name
         {
             get { return name_; }
         }
-        
+        public string Genre
+        {
+            get { return genre_; }
+        }
+
+
         public string Director
         {
             get { return director_; }

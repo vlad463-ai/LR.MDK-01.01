@@ -11,17 +11,25 @@ namespace MovieRental
     {
         public List<CharacteristicsFilms> Film()
         {
-            List<CharacteristicsFilms> films = new List<CharacteristicsFilms>();
-            string pach = @"C:\REPOO\LR 3\Вариант 3\MovieRental\Фильмы\Фильмы.csv";
-            StreamReader sw = new StreamReader(pach);
+            List<CharacteristicsFilms> allMovie = new List<CharacteristicsFilms>();
+            string path = @"D:\repo smirno\LR 3\Фильмы\data.csv";
+            StreamReader info = new StreamReader(path);
             string line;
-            while ((line = sw.ReadLine()) != null)
+            while ((line = info.ReadLine()) != null)
             {
-                string[] lines = line.Split('-');
-                films.Add(new CharacteristicsFilms (lines[0], lines[1], lines[2], Convert.ToInt32 (lines[3]),Convert.ToDateTime( lines[4]), lines[5]));
+                string[] lines = line.Split(';');
+                allMovie.Add(new CharacteristicsFilms(
+                lines[1],  // Название фильма
+                lines[2],  // Режиссер
+                lines[3],  // Актеры
+                Convert.ToInt32(lines[4]),  // Стоимость
+                Convert.ToDateTime(lines[5]),  // Дата окончания проката
+                lines[6],  // Путь к фото
+                lines[0]   // Жанр
+                ));
             }
-            sw.Close();
-            return films;
+            info.Close();
+            return allMovie;
 
 
 
