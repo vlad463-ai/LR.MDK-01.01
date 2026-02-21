@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MenuToolStrip = new System.Windows.Forms.ToolStrip();
             this.RemoveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.usersTableView1 = new FirstWinFormsLib.UsersTableView();
             this.PlusToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.usersTableView1 = new FirstWinFormsLib.UsersTableView();
             this.MenuToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersTableView1)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +44,7 @@
             this.PlusToolStripButton});
             this.MenuToolStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuToolStrip.Name = "MenuToolStrip";
-            this.MenuToolStrip.Size = new System.Drawing.Size(800, 67);
+            this.MenuToolStrip.Size = new System.Drawing.Size(511, 35);
             this.MenuToolStrip.TabIndex = 0;
             this.MenuToolStrip.Text = "MenuToolStrip";
             // 
@@ -55,19 +55,9 @@
             this.RemoveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("RemoveToolStripButton.Image")));
             this.RemoveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RemoveToolStripButton.Name = "RemoveToolStripButton";
-            this.RemoveToolStripButton.Size = new System.Drawing.Size(64, 64);
+            this.RemoveToolStripButton.Size = new System.Drawing.Size(32, 32);
             this.RemoveToolStripButton.Text = "ToolStripButton";
             this.RemoveToolStripButton.Click += new System.EventHandler(this.RemoveToolStripButton_Click);
-            // 
-            // usersTableView1
-            // 
-            this.usersTableView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usersTableView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.usersTableView1.Location = new System.Drawing.Point(0, 67);
-            this.usersTableView1.Name = "usersTableView1";
-            this.usersTableView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.usersTableView1.Size = new System.Drawing.Size(800, 150);
-            this.usersTableView1.TabIndex = 1;
             // 
             // PlusToolStripButton
             // 
@@ -76,19 +66,30 @@
             this.PlusToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("PlusToolStripButton.Image")));
             this.PlusToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PlusToolStripButton.Name = "PlusToolStripButton";
-            this.PlusToolStripButton.Size = new System.Drawing.Size(64, 64);
+            this.PlusToolStripButton.Size = new System.Drawing.Size(32, 32);
             this.PlusToolStripButton.Text = "PlusToolStripButton";
-            this.PlusToolStripButton.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.PlusToolStripButton.Click += new System.EventHandler(this.PlusToolStripButton_Click);
+            // 
+            // usersTableView1
+            // 
+            this.usersTableView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersTableView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.usersTableView1.Location = new System.Drawing.Point(0, 35);
+            this.usersTableView1.Name = "usersTableView1";
+            this.usersTableView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.usersTableView1.Size = new System.Drawing.Size(511, 150);
+            this.usersTableView1.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(511, 197);
             this.Controls.Add(this.usersTableView1);
             this.Controls.Add(this.MenuToolStrip);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Пользователи";
             this.MenuToolStrip.ResumeLayout(false);
             this.MenuToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersTableView1)).EndInit();

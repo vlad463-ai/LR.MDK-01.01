@@ -30,7 +30,8 @@ namespace ModelViewLib.Presenters
         }
         public void AddUser(User U)
         {
-            model_.AddUser(U);
+            
+            model_.AddUser(U); 
             view_.Show(model_.Load());
         }
     }

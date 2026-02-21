@@ -30,9 +30,18 @@ namespace FirstWinFormsLib
             presenter_.RemoveUser(selectedUser);
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void PlusToolStripButton_Click(object sender, EventArgs e)
         {
+            AddUser addUser = new AddUser();
+            
+            if(addUser.ShowDialog() == DialogResult.Yes)
+            {
+                
 
+
+                presenter_.AddUser(addUser.user);
+            }
+            
         }
     }
 }
