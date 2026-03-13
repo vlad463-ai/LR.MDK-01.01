@@ -10,6 +10,6 @@ namespace LiveChartsLib.Presenter
     public  class ServicesPresenter
     {
         private Salon model;
-        
+        а
     }
 }
