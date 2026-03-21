@@ -7,6 +7,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DBTestWinForm
 {
@@ -103,6 +105,32 @@ namespace DBTestWinForm
                 return false;
             }
         }
-        public 
+        public bool AddUser(User u)
+        {
+            try
+            { 
+            bool result = false;
+            var con = new NpgsqlConnection(connectSetting);
+            con.Open();
+            var sql = "Insert INTO quarty(login, password,name, age) VALUES(@login, @password, @name, @age)";
+            var cmd = new NpgsqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@login", u.Login);
+            cmd.Parameters.AddWithValue("@password", u.Password);
+            cmd.Parameters.AddWithValue("@name", u.Name);
+            cmd.Parameters.AddWithValue("@age", u.Age);
+            int execute = cmd.ExecuteNonQuery();
+            if (execute > 0)
+            {
+                result = true;
+                result_.Add(u);
+            }
+                return result;
+            }
+            catch (NpgsqlException exception)
+            {
+                MessageBox.Show($"Ошибка: {exception.Message}");
+                return false;
+            }
+        }
     }
 }

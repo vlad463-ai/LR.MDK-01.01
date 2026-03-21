@@ -26,5 +26,10 @@ namespace DBTestWinForm
         {
 
         }
+
+        private void AddUsers_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
