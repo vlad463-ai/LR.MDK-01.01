@@ -15,7 +15,7 @@ namespace DBTestWinForm
     public class PgUsersLoader
     {
         private BindingList<User> result_ = new BindingList<User>();
-        private const string connectSetting = "Host=192.168.1.48;Username=st50-7;Password=507;Database=Test";
+        private const string connectSetting = "Host=192.168.1.48;Username=st56-12;Password=5612;Database=Test";
         public BindingList<User> Load() 
         {
             try

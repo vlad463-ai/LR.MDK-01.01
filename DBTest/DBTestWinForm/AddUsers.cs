@@ -12,24 +12,45 @@ namespace DBTestWinForm
 {
     public partial class AddUsers: Form
     {
-        public AddUsers()
+        private PgUsersLoader loader_;
+
+        public AddUsers(PgUsersLoader loader)
         {
             InitializeComponent();
+            loader_ = loader;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            User user = new User()
+            {
+                Login = login.Text,
+                Password = password.Text,
+                Name = name.Text,
+                Age = (int)age.Value
+
+            };
+            loader_.AddUser(user);
+            this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Clear_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Oke_Click(object sender, EventArgs e)
         {
+            User user = new User()
+            {
+                Login = login.Text,
+                Password = password.Text,
+                Name = name.Text,
+                Age = (int)age.Value
 
-        }
-
-        private void AddUsers_Load(object sender, EventArgs e)
-        {
-
+            };
+            loader_.AddUser(user);
+            this.Close();
+            Oke.Enabled = false;
         }
     }
 }

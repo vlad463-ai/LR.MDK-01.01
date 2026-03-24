@@ -15,6 +15,7 @@ namespace DBTestWinForm
     public partial class Form1: Form
     {
         PgUsersLoader loader = new PgUsersLoader();
+        
 
         public Form1()
         {                                              
@@ -46,7 +47,10 @@ namespace DBTestWinForm
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
+            AddUsers addUsers = new AddUsers(loader);
+            addUsers.Show();
 
         }
+        
     }
 }
