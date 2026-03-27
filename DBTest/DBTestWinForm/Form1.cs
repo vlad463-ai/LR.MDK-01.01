@@ -12,12 +12,12 @@ using Npgsql;
 
 namespace DBTestWinForm
 {
-    public partial class Form1: Form
+    public partial class MainForm: Form
     {
         PgUsersLoader loader = new PgUsersLoader();
         
 
-        public Form1()
+        public MainForm()
         {                                              
             InitializeComponent();
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -50,6 +50,15 @@ namespace DBTestWinForm
             AddUsers addUsers = new AddUsers(loader);
             addUsers.Show();
 
+        }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridView.SelectedRows[0];
+            User selectedUser = row.DataBoundItem as User;
+            AddUsers editUser = new AddUsers(loader);
+            editUser.SetUser(selectedUser);
+            editUser.Show();
         }
         
     }

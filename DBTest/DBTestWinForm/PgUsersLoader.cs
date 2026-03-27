@@ -132,5 +132,38 @@ namespace DBTestWinForm
                 return false;
             }
         }
+        public bool EditUser(User u)
+        {
+            try
+            {
+                bool result = false;
+                var con = new NpgsqlConnection(connectSetting);
+                con.Open();
+                var sql = "UPDATE quarty Set password = @password, name = @name, age = @age WHERE login = @login";
+                var cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@login", u.Login);
+                cmd.Parameters.AddWithValue("@password", u.Password);
+                cmd.Parameters.AddWithValue("@name", u.Name);
+                cmd.Parameters.AddWithValue("@age", u.Age);
+                int execute = cmd.ExecuteNonQuery();
+                if (execute > 0)
+                {
+                    result = true;
+                    for(int i = 0; i < result_.Count; i++)
+                    {
+                        if (result_[i].Login == u.Login)
+                        {
+                            result_[i] = u;
+                        }
+                    }
+                }
+                return result;
+            }
+            catch (NpgsqlException exception)
+            {
+                MessageBox.Show($"Ошибка: {exception.Message}");
+                return false;
+            }
+        }
     }
 }

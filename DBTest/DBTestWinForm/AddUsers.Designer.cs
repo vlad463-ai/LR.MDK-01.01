@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.adduserss = new System.Windows.Forms.Button();
+            this.OkButton = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
             this.age = new System.Windows.Forms.NumericUpDown();
             this.Oke = new System.Windows.Forms.Button();
@@ -106,16 +106,16 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Возраст";
             // 
-            // adduserss
+            // OkButton
             // 
-            this.adduserss.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.adduserss.Location = new System.Drawing.Point(53, 195);
-            this.adduserss.Name = "adduserss";
-            this.adduserss.Size = new System.Drawing.Size(80, 26);
-            this.adduserss.TabIndex = 8;
-            this.adduserss.Text = "ОК";
-            this.adduserss.UseVisualStyleBackColor = true;
-            this.adduserss.Click += new System.EventHandler(this.button1_Click);
+            this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OkButton.Location = new System.Drawing.Point(53, 195);
+            this.OkButton.Name = "OkButton";
+            this.OkButton.Size = new System.Drawing.Size(80, 26);
+            this.OkButton.TabIndex = 8;
+            this.OkButton.Text = "ОК";
+            this.OkButton.UseVisualStyleBackColor = true;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // Clear
             // 
@@ -165,7 +165,7 @@
             this.Controls.Add(this.Oke);
             this.Controls.Add(this.age);
             this.Controls.Add(this.Clear);
-            this.Controls.Add(this.adduserss);
+            this.Controls.Add(this.OkButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -192,7 +192,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button adduserss;
+        private System.Windows.Forms.Button OkButton;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.NumericUpDown age;
         private System.Windows.Forms.Button Oke;

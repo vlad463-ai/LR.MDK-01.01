@@ -1,6 +1,6 @@
 ﻿namespace DBTestWinForm
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -32,22 +32,24 @@
             this.CreateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
+            this.Edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(800, 277);
+            this.dataGridView.Size = new System.Drawing.Size(612, 277);
             this.dataGridView.TabIndex = 0;
             // 
             // CreateButton
             // 
-            this.CreateButton.Location = new System.Drawing.Point(38, 310);
+            this.CreateButton.Location = new System.Drawing.Point(361, 283);
             this.CreateButton.Name = "CreateButton";
-            this.CreateButton.Size = new System.Drawing.Size(105, 45);
+            this.CreateButton.Size = new System.Drawing.Size(77, 25);
             this.CreateButton.TabIndex = 1;
             this.CreateButton.Text = "Добавить";
             this.CreateButton.UseVisualStyleBackColor = true;
@@ -55,9 +57,9 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(156, 310);
+            this.deleteButton.Location = new System.Drawing.Point(444, 283);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(105, 45);
+            this.deleteButton.Size = new System.Drawing.Size(77, 25);
             this.deleteButton.TabIndex = 2;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -65,25 +67,36 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(276, 310);
+            this.ClearButton.Location = new System.Drawing.Point(527, 283);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(105, 45);
+            this.ClearButton.Size = new System.Drawing.Size(77, 25);
             this.ClearButton.TabIndex = 3;
             this.ClearButton.Text = "Очистить";
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // Edit
+            // 
+            this.Edit.Location = new System.Drawing.Point(259, 283);
+            this.Edit.Name = "Edit";
+            this.Edit.Size = new System.Drawing.Size(96, 25);
+            this.Edit.TabIndex = 4;
+            this.Edit.Text = "Редактировать";
+            this.Edit.UseVisualStyleBackColor = true;
+            this.Edit.Click += new System.EventHandler(this.Edit_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(612, 314);
+            this.Controls.Add(this.Edit);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.CreateButton);
             this.Controls.Add(this.dataGridView);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
+            this.Text = "Пользователи";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -95,6 +108,7 @@
         private System.Windows.Forms.Button CreateButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button ClearButton;
+        private System.Windows.Forms.Button Edit;
     }
 }
 
