@@ -55,7 +55,7 @@ namespace TestFileInterface
         private void LoginComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedUser = LoginComboBox.SelectedItem.ToString();
-            List<User>
+            List<User>;
         }
     }
 }
