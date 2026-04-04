@@ -8,7 +8,7 @@ namespace LABA__2
 {
     class AnalysisDataModules
     {
-        static public void SortPlayers(List<string> players, List<int> goals) // сортировка игроков
+        static public void SortPlayers(List<string> players, List<int> goals) // сортировка очков
         {
             for (int i = 0; i < goals.Count; i++)
             {
@@ -28,17 +28,14 @@ namespace LABA__2
                 }
             }
         }
-        static public int MaxScoreTeams(List<int>[] scores) //максимальный балл команд
+        static public int MaxScoreTeams(int[] scores) //максимальный балл команд
         {
             int max = 0;
             for (int i = 0; i < scores.Length; i++)
             {
                 int k = 0;
-                List<int> temp = scores[i];
-                foreach (int h in temp)
-                {
-                    k += h;
-                }
+                int temp = scores[i];
+                k += temp;
                 if (max < k)
                 {
                     max = k;
@@ -46,14 +43,9 @@ namespace LABA__2
             }
             return max;
         }
-        static public int LaggingBehindFirstPlace(List<int> scores, int max) // отставание от первого места
+        static public int LaggingBehindFirstPlace(int scores, int max) // отставание от первого места
         {
-            int i = 0;
-            foreach (int t in scores)
-            {
-                i += t;
-            }
-            int v = max - i;
+            int v = max - scores;
             return v;
         }
     }

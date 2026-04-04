@@ -8,18 +8,11 @@ namespace LABA__2
 {
     class functions_command
     {
-        static public (List<int>[], List<string>[], List<int>[]) Comandinputdata()
+        static public (int[], List<string>[], List<int>[]) Comandinputdata()
         {
 
-            List<int>[] teamшspast = new List<int>[6] //кол-во очков
-            {
-              new List<int>(),
-              new List<int>(),
-              new List<int>(),
-              new List<int>(),
-              new List<int>(),
-              new List<int>()
-            };
+            int[] teamшspast = new int[6]; //кол-во очков
+
             List<string>[] players = new List<string>[6] // игроки команды
             {
               new List<string>(),
@@ -40,7 +33,7 @@ namespace LABA__2
             };
             // Заполняем команды очками и именами
 
-            teamшspast[0].Add(3);
+            teamшspast[0] = 3;
             players[0].Add("Ира");
             goalsplauers[0].Add(10);
             players[0].Add("Юля");
@@ -48,7 +41,7 @@ namespace LABA__2
             players[0].Add("Уля");
             goalsplauers[0].Add(8);
 
-            teamшspast[1].Add(15);
+            teamшspast[1] = 15;
             players[1].Add("Гога");
             goalsplauers[1].Add(15);
             players[1].Add("Иван");
@@ -56,7 +49,7 @@ namespace LABA__2
             players[1].Add("Петя");
             goalsplauers[1].Add(20);
 
-            teamшspast[2].Add(12);
+            teamшspast[2] = 12;
             players[2].Add("Влад");
             goalsplauers[2].Add(14);
             players[2].Add("Кирилл");
@@ -64,7 +57,7 @@ namespace LABA__2
             players[2].Add("Артем");
             goalsplauers[2].Add(22);
 
-            teamшspast[3].Add(19);
+            teamшspast[3] = (19);
             players[3].Add("Юля");
             goalsplauers[3].Add(2);
             players[3].Add("Галя");
@@ -72,7 +65,7 @@ namespace LABA__2
             players[3].Add("Вика");
             goalsplauers[3].Add(25);
 
-            teamшspast[4].Add(11);
+            teamшspast[4] = (11);
             players[4].Add("Денчик");
             goalsplauers[4].Add(5);
             players[4].Add("Игорь");
@@ -80,7 +73,7 @@ namespace LABA__2
             players[4].Add("Валим");
             goalsplauers[4].Add(12);
 
-            teamшspast[5].Add(16);
+            teamшspast[5] = (16);
             players[5].Add("Валера");
             goalsplauers[5].Add(24);
             players[5].Add("Серега");

@@ -15,6 +15,10 @@ namespace LABA__2
         {
             Console.WriteLine(String.Join(", ", teamspast));
         }
+        static void PrintScore(int teamspast)
+        {
+            Console.WriteLine(teamspast);
+        }
         static void Main()
         {
             string[] commands = new string[] { "1 команда", "2 команда", "3 команда", "4 команда", "5 команда", "6 команда" };
@@ -32,7 +36,7 @@ namespace LABA__2
             Console.Write("Имена  игроков команды: ");
             PrintPlayer(teamnamess);
             Console.Write("Очки выбраной команды: ");
-            PrintGoalsOrScore(teamspast);
+            PrintScore(teamspast);
             Console.Write("Голы каждого игрока: ");
             PrintGoalsOrScore(goal);
             int maxNumder = AnalysisDataModules.MaxScoreTeams(spast);
